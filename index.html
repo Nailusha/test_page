@@ -7,23 +7,16 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <!-- ===== Шапка (остается статичной) ===== -->
+    <!-- ===== Шапка (остается статичной) ===== 
     <header>
       <h1></h1>
-    </header>
+    </header>-->
 
-    <!-- ===== Модалка с QR-кодом (по желанию) ===== -->
-    <section id="qr-modal" class="modal">
-      <div class="modal-content">
-        <p>Сканируйте QR-код, чтобы открыть историю на телефоне.</p>
-        <button class="modal-close">Закрыть</button>
-      </div>
-    </section>
 
     <!-- ===== Обёртка «сторис» ===== -->
     <div id="story-wrapper">
       <!-- Вступление -->
-      <section id="started" class="story-section period-section active">
+      <section class="story-section active">
         <div
           class="bg-image"
           style="background-image: url('images/started.jpg')"
@@ -40,7 +33,7 @@
       </section>
 
       <!-- 1866 – 1867 -->
-      <section id="period-1866" class="story-section period-section">
+      <section class="story-section active">
         <div
           class="bg-image"
           style="background-image: url('images/1866.jpg')"
@@ -58,7 +51,7 @@
       </section>
 
       <!-- 1873 – 1875 -->
-      <section id="period-1873" class="story-section period-section">
+      <section class="story-section active">
         <div
           class="bg-image"
           style="background-image: url('images/1873.jpg')"
@@ -75,31 +68,30 @@
       </section>
 
       <!-- 1900 – 1903 -->
-      <section id="period-1900" class="story-section period-section">
+      <section class="story-section active">
         <div
           class="bg-image"
           style="background-image: url('images/1900.jpg')"
         ></div>
         <div class="text-overlay animate">
+          <img src="images/1900.jpg" alt="Картинка периода 1900–1903" />
           <h2>1900 – 1903</h2>
           <p>
             Мировой кризис затронул и Россию. Государство поддержало крупные
-            компании и банки деньгами и сократило заказы за границей, чтобы
-            загрузить отечественные заводы.
+            компании и банки деньгами и сократило заказы за границей.
           </p>
-          <img src="./images/1900.jpg" alt="Foto" />
         </div>
       </section>
 
       <!-- 1923 – 1924 -->
-      <section id="period-1923" class="story-section period-section">
+      <section class="story-section active">
         <div
           class="bg-image"
           style="background-image: url('images/1923.jpg')"
         ></div>
         <div class="text-overlay animate">
           <h2>1923 – 1924</h2>
-          <p>
+          <p class="slide_text">
             После гражданской войны товары стоили дорого. Компании снизили
             издержки — сократили персонал и посредников. Так экономика
             постепенно вышла из кризиса.
@@ -109,27 +101,48 @@
         </div>
       </section>
 
-      <section id="recommend" class="recommend">
-        <div
-          class="bg-image"
-          style="background-color: url('images/1923.jpg')"
-        ></div>
-        <div class="text-overlay animate">
-          <h2>Ркомендации</h2>
-          <h2>Может быть интересно</h2>
+      <section class="story-section recommend-slide">
+        <div class="bg-beige"></div>
+        <!-- Бежевый фон -->
+        <div class="recommend-wrapper animate">
+          <h2>Рекомендованно</h2>
+          <div class="recommend-cards">
+            <a href="https://example.com/link1" class="card">
+              <img src="images/reco1.jpg" alt="Совет 1" />
+            </a>
+            <a href="https://example.com/link2" class="card">
+              <img src="images/reco2.jpg" alt="Совет 2" />
+            </a>
+            <a href="https://example.com/link3" class="card">
+              <img src="images/reco3.jpg" alt="Совет 3" />
+            </a>
+            <h2>Может быть интересно</h2>
+          <div class="recommend-cards">
+            <a href="https://example.com/link1" class="card">
+              <img src="images/reco1.jpg" alt="Совет 1" />
+            </a>
+            <a href="https://example.com/link2" class="card">
+              <img src="images/reco2.jpg" alt="Совет 2" />
+            </a>
+            <a href="https://example.com/link3" class="card">
+              <img src="images/reco3.jpg" alt="Совет 3" />
+            </a>
+            <a href="https://example.com/link3" class="card">
+              <img src="images/reco3.jpg" alt="Совет 3" />
+            </a>
+            
+          </div>
         </div>
       </section>
 
-      <!-- ===== Кнопки навигации «сторис» ===== -->
-      <button id="prevBtn" class="nav-btn" aria-label="Предыдущая секция">
-        &#10094;
-      </button>
-      <button id="nextBtn" class="nav-btn" aria-label="Следующая секция">
-        &#10095;
-      </button>
+      <!-- Кнопки -->
+      <button id="prevBtn" class="nav-btn">&#10094;</button>
+      <button id="nextBtn" class="nav-btn">&#10095;</button>
     </div>
 
-    <!-- ===== Подключаем скрипт ===== -->
+    <!-- QR-код в углу -->
+    <img id="qr-code" src="images/quar.png" alt="QR-код" />
+
     <script src="index.js"></script>
   </body>
 </html>

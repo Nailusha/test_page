@@ -1,4 +1,3 @@
-/* ===== Сброс и базовая типографика ===== */
 *,
 *::before,
 *::after {
@@ -7,44 +6,15 @@
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #fff;
   background: #000;
-  overflow: hidden; /* предотвращаем системный скролл */
+  overflow: hidden;
+  color: #fff;
 }
-
-h1,
-h2 {
-  line-height: 1.2;
-  margin: 0 0 1rem;
-}
-
-/* ===== Шапка ===== */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 12px 24px;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-img {
-  position: absolute;
-  z-index: -2;
-  width: auto;
-  left: 250px;
-  bottom: -280px;
-  border-radius: 50%;
-}
-
-
 
 /* ===== Обёртка «сторис» ===== */
 #story-wrapper {
@@ -74,7 +44,6 @@ img {
   pointer-events: auto;
 }
 
-/* Размытое фон-изображение */
 .bg-image {
   position: absolute;
   inset: 0;
@@ -85,97 +54,150 @@ img {
   z-index: 0;
 }
 
-/* Затемнённый текстовый оверлей */
-.text-overlay {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 2rem;
-  border-radius: 8px;
+/* Бежевый фон для последнего слайда */
+.bg-beige {
+  position: absolute;
+  inset: 0;
+  background-color: #ada18a;
+  z-index: 0;
 }
 
-/* Анимация появления текста */
+.text-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.text-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  z-index: 1;
+  position: relative;
+}
+
+.text-overlay h2,
+.text-overlay p {
+  position: absolute;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 4px #000;
+  padding: 10px;
+  width: 90%;
+  z-index: 2;
+}
+
+.text-overlay h2 {
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+}
+
+.text-overlay p {
+  bottom: 20px;
+  left: 20px;
+  font-size: 1rem;
+}
+
+/* Анимация */
 .animate {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .animate.visible {
   opacity: 1;
   transform: none;
 }
 
-/* ===== Кнопки навигации ===== */
+/* Кнопки */
 .nav-btn {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.35);
-  border: none;
+  font-size: 2rem;
   color: #fff;
-  font-size: 2.5rem;
-  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
   cursor: pointer;
-  z-index: 1500;
-  user-select: none;
-  transition: background 0.3s;
+  padding: 10px;
+  z-index: 1100;
 }
-.nav-btn:hover {
-  background: rgba(0, 0, 0, 0.55);
-}
+
 #prevBtn {
-  left: 15px;
+  left: 20px;
 }
 #nextBtn {
-  right: 15px;
+  right: 20px;
 }
 
-/* ===== Модальное окно (при необходимости) ===== */
-.modal {
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* QR */
+#qr-code {
   position: fixed;
-  inset: 0;
+  bottom: 20px;
+  right: 20px;
+  width: 175px;
+  height: 180px;
+  z-index: 1200;
+  background-image: url(./images/quar.png);
+}
+
+/* ===== Блок рекомендаций на последнем слайде ===== */
+.recommend-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 25%;
+  height: 80%;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s;
-  z-index: 3000;
+  gap: 1.5rem;
 }
-.modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-.modal-content {
-  background: #fff;
-  color: #000;
-  padding: 24px 28px;
-  border-radius: 8px;
+
+.recommend-wrapper h2 {
+  color: #333;
+  font-size: 1.6rem;
+  margin: 0;
   text-align: center;
 }
-.modal-close {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  background: #0066cc;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.modal-close:hover {
-  background: #004499;
+
+.recommend-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* ===== Адаптив ===== */
-@media (max-width: 600px) {
-  header {
-    font-size: 1rem;
-  }
-  .nav-btn {
-    font-size: 2rem;
-  }
-  .text-overlay {
-    padding: 1.5rem;
-  }
+.card {
+  display: block;
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
