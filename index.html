@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>История кризисов — интерактивные «сторис»</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- ===== Шапка (остается статичной) ===== -->
+    <header>
+      <h1></h1>
+    </header>
+
+    <!-- ===== Модалка с QR-кодом (по желанию) ===== -->
+    <section id="qr-modal" class="modal">
+      <div class="modal-content">
+        <p>Сканируйте QR-код, чтобы открыть историю на телефоне.</p>
+        <button class="modal-close">Закрыть</button>
+      </div>
+    </section>
+
+    <!-- ===== Обёртка «сторис» ===== -->
+    <div id="story-wrapper">
+      <!-- Вступление -->
+      <section id="started" class="story-section period-section active">
+        <div
+          class="bg-image"
+          style="background-image: url('images/started.jpg')"
+        ></div>
+        <div class="text-overlay animate">
+          <h2>Как в России справлялись с кризисами</h2>
+          <p>
+            В истории нашей страны было много кризисов, но все их удалось
+            преодолеть. Рассказываем о главных потрясениях до революции и в
+            СССР.
+          </p>
+          <img src="./images/started.jpg" alt="Foto" />
+        </div>
+      </section>
+
+      <!-- 1866 – 1867 -->
+      <section id="period-1866" class="story-section period-section">
+        <div
+          class="bg-image"
+          style="background-image: url('images/1866.jpg')"
+        ></div>
+        <div class="text-overlay animate">
+          <h2>1866 – 1867</h2>
+          <p>
+            В России производили больше тканей, чем нужно, а за рубежом упали
+            цены на хлопок — экспортировать было невыгодно. Экономику спасло
+            строительство железных дорог: оно развило угольную промышленность и
+            металлургию.
+          </p>
+          <img src="./images/1866.jpg" alt="Foto" />
+        </div>
+      </section>
+
+      <!-- 1873 – 1875 -->
+      <section id="period-1873" class="story-section period-section">
+        <div
+          class="bg-image"
+          style="background-image: url('images/1873.jpg')"
+        ></div>
+        <div class="text-overlay animate">
+          <h2>1873 – 1875</h2>
+          <p>
+            Упали фондовые рынки Европы и США, а в России накопилось
+            перепроизводство товаров — начались банкротства компаний.
+            Промышленность спасли высокие пошлины на импорт.
+          </p>
+          <img src="./images/1873.jpg" alt="Foto" />
+        </div>
+      </section>
+
+      <!-- 1900 – 1903 -->
+      <section id="period-1900" class="story-section period-section">
+        <div
+          class="bg-image"
+          style="background-image: url('images/1900.jpg')"
+        ></div>
+        <div class="text-overlay animate">
+          <h2>1900 – 1903</h2>
+          <p>
+            Мировой кризис затронул и Россию. Государство поддержало крупные
+            компании и банки деньгами и сократило заказы за границей, чтобы
+            загрузить отечественные заводы.
+          </p>
+          <img src="./images/1900.jpg" alt="Foto" />
+        </div>
+      </section>
+
+      <!-- 1923 – 1924 -->
+      <section id="period-1923" class="story-section period-section">
+        <div
+          class="bg-image"
+          style="background-image: url('images/1923.jpg')"
+        ></div>
+        <div class="text-overlay animate">
+          <h2>1923 – 1924</h2>
+          <p>
+            После гражданской войны товары стоили дорого. Компании снизили
+            издержки — сократили персонал и посредников. Так экономика
+            постепенно вышла из кризиса.
+          </p>
+          <img src="./images/1923.jpg" alt="Foto" />
+          <button>Интересно</button>
+        </div>
+      </section>
+
+      <section id="recommend" class="recommend">
+        <div
+          class="bg-image"
+          style="background-color: url('images/1923.jpg')"
+        ></div>
+        <div class="text-overlay animate">
+          <h2>Ркомендации</h2>
+          <h2>Может быть интересно</h2>
+        </div>
+      </section>
+
+      <!-- ===== Кнопки навигации «сторис» ===== -->
+      <button id="prevBtn" class="nav-btn" aria-label="Предыдущая секция">
+        &#10094;
+      </button>
+      <button id="nextBtn" class="nav-btn" aria-label="Следующая секция">
+        &#10095;
+      </button>
+    </div>
+
+    <!-- ===== Подключаем скрипт ===== -->
+    <script src="index.js"></script>
+  </body>
+</html>
